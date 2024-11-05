@@ -1,0 +1,25 @@
+.responsive-textarea {
+    width: 100%; /* Mengisi seluruh lebar elemen induk */
+    min-width: 300px; /* Lebar minimum untuk menjaga keterbacaan */
+    max-width: 100%; /* Batas maksimum lebar */
+    height: 150px; /* Tinggi awal */
+    padding: 10px; /* Memberikan ruang di dalam textarea */
+    box-sizing: border-box; /* Memastikan padding termasuk dalam ukuran total */
+    resize: vertical; /* Memungkinkan pengguna mengubah ukuran secara vertikal */
+    border: 1px solid #ccc; /* Memberikan border */
+    border-radius: 5px; /* Memberikan sudut membulat */
+    font-size: 1rem; /* Ukuran font yang nyaman */
+    font-family: Arial, sans-serif; /* Font yang mudah dibaca */
+}
+
+/* Responsif untuk layar kecil */
+@media (max-width: 600px) {
+    .responsive-textarea {
+        height: 120px; /* Menyesuaikan tinggi untuk layar kecil */
+    }
+}
+
+.disabled-form {
+    background-color: rgb(190, 190, 190);
+    opacity: 0.7;
+}
