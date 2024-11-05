@@ -4,12 +4,12 @@ use App\Models\RoleMenu;
 $role = Auth::user()->role;
 
 // Ambil menu induk yang diizinkan untuk role tersebut, dengan submenu (children)
-$menus = $role->menus()
-              ->where('main_id', 0) // Hanya menu induk
-              ->with('children') // Eager load submenu untuk setiap menu induk
-              ->get();
-
-
+$menus = Menu::whereIn('id', $role->menus->pluck('id'))
+             ->where('main_id', 0) // Hanya menu induk
+             ->with(['children' => function($query) use ($role) {
+                 $query->whereIn('id', $role->menus->pluck('id'));
+             }])
+             ->get();
 ?>
 <aside id="application-sidebar-brand"
 class="hs-overlay hs-overlay-open:translate-x-0 -translate-x-full  transform hidden xl:block xl:translate-x-0 xl:end-auto xl:bottom-0 fixed top-0 with-vertical h-screen z-[999] flex-shrink-0 border-r-[1px] w-[270px] border-gray-400  bg-white left-sidebar transition-all duration-300">
