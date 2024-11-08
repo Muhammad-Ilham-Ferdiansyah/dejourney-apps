@@ -23,7 +23,9 @@ $(function () {
       (currentPathPath.startsWith("/roles/") && elementUrlPath.includes("/roles")) ||
       (currentPathPath.startsWith("/menus/") && elementUrlPath.includes("/menus")) ||
       (currentPathPath.startsWith("/role_menus/") && elementUrlPath.includes("/role_menus")) ||
-      (currentPathPath.startsWith("/users/") && elementUrlPath.includes("/users"))
+      (currentPathPath.startsWith("/users/") && elementUrlPath.includes("/users")) ||
+      (currentPathPath.startsWith("/journey_categories/") && elementUrlPath.includes("/journey_categories")) ||
+      (currentPathPath.startsWith("/journeys/") && elementUrlPath.includes("/journeys"))
       // Tambahkan aturan tambahan jika diperlukan
     );
   });

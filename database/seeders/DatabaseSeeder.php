@@ -120,6 +120,38 @@ class DatabaseSeeder extends Seeder
             'icon' => 'ti ti-user',
             'published' => '1',
         ]);
+        Menu::create([
+            'main_id' => 0,
+            'name' => 'Setup Proses',
+            'description' => 'Halaman Induk Setup Proses',
+            'orderno' => 3,
+            'published' => '1',
+        ]);
+        Menu::create([
+            'main_id' => 8,
+            'name' => 'Setup Journey Category',
+            'description' => 'Halaman Setup Journey Category dari Setup Proses',
+            'orderno' => 1,
+            'link' => '/journey_categories',
+            'icon' => 'ti ti-pin',
+            'published' => '1',
+        ]);
+        Menu::create([
+            'main_id' => 0,
+            'name' => 'Proses',
+            'description' => 'Halaman Induk Proses',
+            'orderno' => 4,
+            'published' => '1',
+        ]);
+        Menu::create([
+            'main_id' => 10,
+            'name' => 'Entry Journeys',
+            'description' => 'Halaman Entry Journey dari Proses',
+            'orderno' => 1,
+            'link' => '/journeys',
+            'icon' => 'ti ti-calendar',
+            'published' => '1',
+        ]);
 
         RoleMenu::create([
             'role_id' => '1',
